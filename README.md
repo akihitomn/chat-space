@@ -2,7 +2,7 @@
 
 |Column|Type|Option|
 |------|----|------|
-|name|string|null: false, unique: true|
+|name|string|null: false, unique: true, add_index|
 
 ### Association
 - has_many :users, through: group_users
@@ -35,7 +35,7 @@
 
 |Column|Type|Option|
 |------|----|------|
-|message|text|null: false|
+|message|text|
 |image|text|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
