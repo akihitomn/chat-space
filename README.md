@@ -2,7 +2,7 @@
 
 |Column|Type|Option|
 |------|----|------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :users, through: group_users
@@ -12,8 +12,8 @@
 ## group_users テーブル
 |Column|Type|Option|
 |------|----|------|
-|group_id|string|null: false, foreign_key: true|
-|user_id|string|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -23,8 +23,8 @@
 
 |Column|Type|Option|
 |------|----|------|
-|name|string|null: false|
-|email|text|null: false|
+|name|string|null: false, unique: true|
+|email|text|null: false, unique: true|
 
 ### Association
 - has_many :groups, through: group_users
@@ -37,8 +37,8 @@
 |------|----|------|
 |message|text|null: false|
 |image|text|
-|group_id|string|null: false, foreign_key: true|
-|user_id|string|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :groups
