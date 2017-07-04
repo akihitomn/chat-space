@@ -1,3 +1,5 @@
+@import "_colors.scss";
+
 .group_box {
   width: 300px;
   float: left;
@@ -10,7 +12,7 @@
   font-size: 16px;
   &-content {
   list-style: none;
-  color: #FFFFFF;
+  color: $text-white-color;
   font-size: 16px;
   p {
   float:left;
@@ -22,10 +24,10 @@
 }
 
 &__middle_list {
-   height:100vh;
+  height:100vh;
   background-color: #2f3e51;
   padding: 20px 20px 0 20px;
-  color: #FFFFFF;
+  color: $text-white-color;
 &_name{
 h1 {
   font-size: 15px;
