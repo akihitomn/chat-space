@@ -1,0 +1,106 @@
+.chat_box {
+  height: 100%;
+  background-color: white;
+  float: left;
+  width: calc(100vw - 320px);
+  &__upper {
+    border-style: solid;
+    border-color: #eeeeee;
+    padding: 0 40px 0 40px;
+    border-width: thin;
+  h1 {
+  font-size: 20px;
+  color: #333333;
+  float: left;
+  margin: 35px 0 15px 0;
+  }
+  input {
+  float: right;
+  color: blue;
+  background-color: white;
+  border-color: #38AEF0;
+  margin:28px 0 0 0;
+  padding:0 20px;
+  line-height: 40px;
+  border-width: thin;
+  }
+  h2 {
+  color: #999999;
+  font-size: 12px;
+  clear: both;
+  }
+  }
+  
+  &__middle {
+  padding: 26px 0 0 0;
+  padding: 0 40px 0 40px;
+  &_message {
+  h1 {
+    font-size: 16px;
+    float: left;
+    font-weight: bold;
+    color: #434A54;
+    margin: 20px 0 0 0;
+  }
+  a {
+    font-size: 12px;
+    float: left;
+    vertical-align: middle;
+    margin: 20px 0 0 10px;
+  }
+  h2 {
+    clear: both;
+    font-size: 14px;
+    color: #434A54;
+    margin:10px 0 20px 0;
+  }
+}
+}
+  &__bottom {
+  background-color: gray;
+  height: 90px;
+  position: absolute;
+  bottom: 0px;
+  width: calc(100vw - 320px);
+  clear: both;
+form.chat_box__text {
+    margin: 20px 0 20px 0;
+    float:left;
+  input {
+    margin:0 0 0 50px;
+    line-height: 50px;
+    bottom:0;
+    width: 830px;
+    font-size: 16px;
+    padding:0 0 0 10px;
+    background-color: white;
+    float: left;
+    border-color: white;
+    border-style: solid;
+    }
+  i {
+    background-color: white;
+    line-height: 48px;
+    padding: 0 10px 0 10px;
+    margin: 0;
+    float:left;
+    border-color: white;
+    border-style: solid;
+  }
+}
+form.chat_box__button {
+    margin: 20px 20px 0 0;
+    float:right;
+  input {
+    bottom:0;
+    color: white;
+    background-color: #38AEF0;
+    padding:0 30px;
+    border-color: transparent;
+    border-width: thin;
+    line-height: 50px;
+    }
+}
+
+  }
+}

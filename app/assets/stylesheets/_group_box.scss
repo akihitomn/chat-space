@@ -1,0 +1,41 @@
+.group_box {
+  width: 300px;
+  float: left;
+  height: 100%;
+  margin: 0 ;
+  &__upper {
+  padding: 35px 20px 35px 20px;
+  background-color: #253141;
+  font-style: bold;
+  font-size: 16px;
+  &-content {
+  list-style: none;
+  color: #FFFFFF;
+  font-size: 16px;
+  p {
+  float:left;
+  }
+  i {
+  float:right;
+  }
+}
+}
+
+&__middle_list {
+   height:100vh;
+  background-color: #2f3e51;
+  padding: 20px 20px 0 20px;
+  color: #FFFFFF;
+&_name{
+h1 {
+  font-size: 15px;
+  margin: 0 0 5px 0;
+  }
+p{
+  line-height: 11px;
+  font-size: 11px;
+  margin: 0 0 40px 0;
+}
+}
+}
+}
