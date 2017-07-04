@@ -1,0 +1,10 @@
+@import "_colors.scss";
+
+.top_message {
+  h1 {
+    background-color: $sky-color;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+}
