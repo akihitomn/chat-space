@@ -7,15 +7,15 @@
     .account-page__inner--right.user-form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
-          .field-label
+          .field--label
             = f.label :email
-          .field-input
+          .field--input
             = f.email_field :email, autofocus: true
           .field
-            .field-label
+            .field--label
               = f.label :password
               %i (英数字8文字以上)
-            .field-input
+            .field--input
               = f.password_field :password, autocomplete: "off"
           .actions
             = f.submit "Log in", class: 'btn'
