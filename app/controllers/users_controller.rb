@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
-
+  layout 'application'
   def edit
   end
 
   def update
     if current_user.update(user_params)
+      flash[:notice]= "success"
       redirect_to root_path
     else
       render :edit
