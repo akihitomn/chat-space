@@ -16,7 +16,7 @@
   float: left;
   margin: 35px 0 15px 0;
   }
-  input {
+  a {
   float: right;
   color: blue;
   background-color: $white-color;
@@ -25,8 +25,9 @@
   padding:0 20px;
   line-height: 40px;
   border-width: thin;
+  text-decoration: none;
   }
-  h2 {
+  h3 {
   color: #999999;
   font-size: 12px;
   clear: both;

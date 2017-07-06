@@ -6,7 +6,8 @@
         %p
         テスト
         %i.fa.fa-cogs
-        %i.fa.fa-pencil-square-o
+        = link_to new_group_path do
+          %i.fa.fa-pencil-square-o
     .group_box__middle_list
       .group_box__middle_list_name
         %h1 aaaaaaaaaaaaaa
@@ -20,8 +21,8 @@
   .chat_box
     .chat_box__upper
       %h1 テスト
-      %input{:type => "submit",:value =>"edit"}
-      %h2 member:test
+      %a{href: "/groups/:id/edit"} Edit
+      %h3 member:test
     .chat_box__middle
       .chat_box__middle_message
         %h1 テスト
