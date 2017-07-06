@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  layout 'application'
+  
   def edit
   end
 
