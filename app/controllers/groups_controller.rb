@@ -18,14 +18,16 @@ class GroupsController < ApplicationController
   end
 
   def update
-    group = Group.find(params[:id])
-    group.update(group_params)
-    redirect_to "/"
+    @group = Group.find(params[:id])
+    if @group.update(group_params)
+      redirect_to "/", notice: 'グループを修正しました'
+    else
+    end
   end
 
 private
   def group_params
-    params.require(:group).permit(:name, :user_ids)
+    params.require(:group).permit(:name, user_ids:[])
   end
 
 end
