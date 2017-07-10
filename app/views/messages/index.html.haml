@@ -16,9 +16,11 @@
           %p まだメッセージはありません。
   .chat_box
     .chat_box__upper
-      %h1 テスト
-      %a{href: "/groups/#{current_user.id}/edit"} Edit
-      %h3 member:test
+      .chat_box__upper_left
+        %h1 @group.name
+        %h2 member:test
+      .chat_box__upper_right
+        %a{href: "/groups/1/edit"} Edit
     .chat_box__middle
       .chat_box__middle_message
         %h1 テスト
