@@ -9,20 +9,18 @@
         = link_to new_group_path do
           %i.fa.fa-pencil-square-o
     .group_box__middle_list
-      .group_box__middle_list_name
-        %h1 aaaaaaaaaaaaaa
-        %p まだメッセージはありません。
-      .group_box__middle_list_name
-        %h1 テスト
-        %p まだメッセージはありません。
-      .group_box__middle_list_name
-        %h1 テスト
-        %p まだメッセージはありません。
+      -@groups.each do |group|
+        .group_box__middle_list_name
+          %h1
+          =group.name
+          %p まだメッセージはありません。
   .chat_box
     .chat_box__upper
-      %h1 テスト
-      %a{href: "/groups/:id/edit"} Edit
-      %h3 member:test
+      .chat_box__upper_left
+        %h1 @group.name
+        %h2 member:test
+      .chat_box__upper_right
+        %a{href: "/groups/1/edit"} Edit
     .chat_box__middle
       .chat_box__middle_message
         %h1 テスト
