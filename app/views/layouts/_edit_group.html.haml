@@ -1,0 +1,21 @@
+= form_for @group do |f|
+  .chat-group-form__field
+    .chat-group-form__field--left
+      = f.label :name, "グループ名", :class => "chat-group-form__label"
+    .chat-group-form__field--right
+      = f.text_field :name, :placeholder => "グループ名を入力して下さい", :class => "chat-group-form__input", :name => "group[name]"
+  .chat-group-form__field
+    .chat-group-form__field--left
+      = f.label :chat, "チャットメンバーを追加", :class => "chat-group-form__label"
+    .chat-group-form__field--right
+      = f.text_field :name, :placeholder => "追加したいユーザーを入力して下さい", :class => "chat-group-form__input", :name => "test"
+  .chat-group-form__field
+    .chat-group-form__field--left
+      = f.label :chat, "チャットメンバー", :class => "chat-group-form__label"
+    .chat-group-form__field--right
+      = f.collection_check_boxes(:user_ids, User.all, :id, :name)
+
+  .chat-group-form__field
+    .chat-group-form__field--left
+    .chat-group-form__field--right
+      = f.submit "更新する", :class => "chat-group-form__action-btn", :name => "commit"
