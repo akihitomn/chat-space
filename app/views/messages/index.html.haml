@@ -1,0 +1,42 @@
+%body
+  .group_box
+    .group_box__upper
+      .group_box__upper-content
+        %p
+        テスト
+        %i.fa.fa-cogs
+        = link_to new_group_path do
+          %i.fa.fa-pencil-square-o
+    .group_box__middle_list
+      -current_user.groups.each do |group|
+        .group_box__middle_list_name
+          %h1
+          =group.name
+          %p まだメッセージはありません。
+  .chat_box
+    .chat_box__upper
+      .chat_box__upper_left
+        %h1 #{@group.name}
+        %h2 member:test
+      .chat_box__upper_right
+        %a{href: "/groups/1/edit"} Edit
+    .chat_box__middle
+      .chat_box__middle_message
+        %h1 テスト
+        %a 2017/07/01 14:47:44
+        %h2 テスト
+      .chat_box__middle_message
+        %h1 テスト2
+        %a 2017/07/01 14:47:44
+        %h2 テスト2
+      .chat_box__middle_message
+        %h1 テスト3
+        %a 2017/07/01 14:47:44
+        %h2 テスト3
+    .chat_box__bottom
+      = form_for [@group, @message] do |f|
+        .chat_box__bottom_text
+          = f.text_field :message, :placeholder => "type a message", :class => "chat_box__bottom_text.input", :name => "message[message]"
+          %i.fa.fa-picture-o
+        .chat_box__bottom_text-button
+          = f.submit "Send", :class => "chat_box__bottom_text-button.input", :name => "commit"
