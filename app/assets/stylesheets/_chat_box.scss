@@ -7,8 +7,8 @@
   width: calc(100vw - 320px);
   &__upper {
     border-style: solid;
-    border-color: #eeeeee;
     padding: 0 40px 0 40px;
+    border-color: #eeeeee;
     border-width: thin;
     height: 100px;
   &_left {
@@ -42,6 +42,7 @@
   
   &__middle {
   padding: 26px 0 0 0;
+  clear: both;
   padding: 0 40px 0 40px;
   &_message {
   h1 {
@@ -72,7 +73,7 @@
   bottom: 0px;
   width: calc(100vw - 320px);
   clear: both;
-form.chat_box__text {
+  &_text {
     margin: 20px 0 20px 0;
     float:left;
   input {
@@ -97,7 +98,7 @@ form.chat_box__text {
     border-style: solid;
   }
 }
-form.chat_box__button {
+    &_text-button {
     margin: 20px 20px 0 0;
     float:right;
   input {
