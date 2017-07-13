@@ -10,7 +10,7 @@
     .group_box__middle_list
       -current_user.groups.each do |group|
         .group_box__middle_list_name
-          = link_to '/groups/#{group.id}/messages' do
+          = link_to group_messages_path do
             %h1= group.name
             -if group.messages.last
               %p= group.messages.last.message
