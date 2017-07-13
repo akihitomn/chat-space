@@ -15,7 +15,6 @@
     float: left;
   h1 {
   font-size: 20px;
-  color: #333333;
   float: left;
   margin: 35px 0 15px 0;
   }
@@ -44,6 +43,8 @@
   padding: 26px 0 0 0;
   clear: both;
   padding: 0 40px 0 40px;
+  overflow: scroll;
+  height: calc(100vh - 100px - 90px);
   &_message {
   h1 {
     font-size: 16px;
@@ -88,15 +89,20 @@
     border-color: $white-color;
     border-style: solid;
     }
-  i {
-    background-color: $white-color;
-    line-height: 48px;
-    padding: 0 10px 0 10px;
-    margin: 0;
+  &_image {
     float:left;
+    background-color: $white-color;
+    padding: 0 10px 0 10px;
+    line-height: 53px;
+  i {
+    margin: 0;
     border-color: $white-color;
     border-style: solid;
   }
+  &_hidden {
+    display: none;
+  }
+}
 }
     &_text-button {
     margin: 20px 20px 0 0;

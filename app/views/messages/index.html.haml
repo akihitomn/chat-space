@@ -10,24 +10,35 @@
     .group_box__middle_list
       -current_user.groups.each do |group|
         .group_box__middle_list_name
-          %h1 #{group.name}
-          %p まだメッセージはありません。
+          = link_to group_messages_path do
+            %h1= group.name
+            -if group.messages.last
+              %p= group.messages.last.message
+            -else
+              %p まだメッセージがありません。
   .chat_box
     .chat_box__upper
       .chat_box__upper_left
-        %h1 #{@group.name}
+        %h1= @group.name
         %h2 member:test
       .chat_box__upper_right
         %a{href: "/groups/1/edit"} Edit
     .chat_box__middle
-      .chat_box__middle_message
-        %h1 user_name
-        %a 2017/07/01 14:47:44
-        %h2 message
+      -if @group.messages.present?
+        -@group.messages.each do |message|
+          .chat_box__middle_message
+            %h1= message.user.name
+            %a= message.created_at.try(:strftime, "%Y/%m/%d %H時%M分")
+            %h2= message.message
+            -if message.image.present?
+              = image_tag message.image,  size: "100x100"
     .chat_box__bottom
       = form_for [@group, @message] do |f|
         .chat_box__bottom_text
           = f.text_field :message, placeholder: "type a message", class: "chat_box__bottom_text.input", name: "message[message]"
-          %i.fa.fa-picture-o
+          .chat_box__bottom_text_image
+            = f.label :image do
+              %i.fa.fa-picture-o
+              = f.file_field :image, class: "chat_box__bottom_text_image_hidden"
         .chat_box__bottom_text-button
           = f.submit "Send", class: "chat_box__bottom_text-button.input", name: "commit"
