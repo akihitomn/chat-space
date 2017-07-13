@@ -11,9 +11,9 @@
       -current_user.groups.each do |group|
         .group_box__middle_list_name
           = link_to '/groups/#{group.id}/messages' do
-            %h1 #{group.name}
-            -if group.messages
-              %p group.messages.order("id DESC")
+            %h1= group.name
+            -if group.messages.last
+              %p= group.messages.last.message
             -else
               %p まだメッセージがありません。
   .chat_box
@@ -24,7 +24,7 @@
       .chat_box__upper_right
         %a{href: "/groups/1/edit"} Edit
     .chat_box__middle
-      -if @group.messages
+      -if @group.messages.present?
         -@group.messages.each do |message|
           .chat_box__middle_message
             %h1= message.user.name
