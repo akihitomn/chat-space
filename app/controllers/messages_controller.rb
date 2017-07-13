@@ -10,7 +10,8 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to group_messages_path(@group.id)
     else
-      render :index, alert: 'メッセージが保存できませんでした。'
+      flash.now[:alert] = 'メッセージか画像を入力して下さい'
+      render :index
     end
   end
 
