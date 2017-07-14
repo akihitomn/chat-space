@@ -17,7 +17,7 @@ describe Message  do
       expect(message).to be_valid
     end
 
-    it "is invalid without a message?" do
+    it "is invalid without both message and image?" do
       message = build(:message, message: "", image: "")
       message.valid?
       expect(message.errors[:message_or_image]).to include("を入力してください")
