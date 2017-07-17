@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_action :move_to_sign_in
   before_action :set_group, only: [:index, :create]
 
   def index
@@ -16,6 +17,11 @@ class MessagesController < ApplicationController
   end
 
 private
+
+  def move_to_sign_in
+    redirect_to new_user_session_path unless user_signed_in?
+  end
+
   def message_params
     params.require(:message).permit(:message, :image).merge(user_id: current_user.id)
   end
