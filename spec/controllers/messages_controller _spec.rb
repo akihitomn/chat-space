@@ -8,23 +8,17 @@ describe MessagesController, type: :controller do
   describe 'GETメソッドのindexアクション' do
     before do
       login_user user
-      get :index, params: { group_id: group.id }
+      get :index, params: { group_id: group }
     end
     context "ログインしている場合" do
       it "@messageが正しく定義されているか？" do
-        blank_message = Message.new
-        get :index, params: { group_id: group }
-        expect(assigns(:message).attributes).to eq(blank_message.attributes)
+        expect(assigns(:message)).to be_a_new(Message)
       end
       it "@groupが正しく定義されているか？" do
-        get :index, params: { group_id: group }
         expect(assigns(:group)).to eq(group)
       end
       it "該当するビューが描画されているか" do
         expect(response).to render_template :index
-      end
-      it "@messageインスタンスが生成されているか" do
-        expect(assigns(:message)).to be_a_new(Message)
       end
     end
 
@@ -40,7 +34,7 @@ end
     context 'ログインしているかつ、メッセージ保存成功' do
       before do
         login_user user
-        get :index, params: {group_id: group.id}
+        get :index, params: {group_id: group}
       end
       it "データベースにメッセージの保存は出来ているか" do
         expect do
@@ -55,7 +49,7 @@ end
     context 'ログインしているが、メッセージの保存に失敗した場合' do
       before do
         login_user user
-        get :index, params: {group_id: group.id}
+        get :index, params: {group_id: group}
       end
       it "メッセージが保存されないこと" do
         expect do
