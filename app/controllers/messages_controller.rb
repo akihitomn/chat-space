@@ -3,13 +3,17 @@ class MessagesController < ApplicationController
   before_action :set_group, only: [:index, :create]
 
   def index
+    @messages = @group.messages
     @message = Message.new
   end
 
   def create
     @message = @group.messages.new(message_params)
     if @message.save
-      redirect_to group_messages_path(@group.id)
+      respond_to do |format|
+        format.html { redirect_to group_messages_path(@group.id) }
+        format.json
+      end
     else
       flash.now[:alert] = 'メッセージか画像を入力して下さい'
       render :index
