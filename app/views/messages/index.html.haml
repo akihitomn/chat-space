@@ -31,7 +31,7 @@
             %a= message.created_at.try(:strftime, "%Y/%m/%d %H時%M分")
             %h2= message.message
             -if message.image.present?
-              = image_tag message.image,  size: "100x100"
+              = image_tag message.image
     .chat_box__bottom
       = form_for [@group, @message] do |f|
         .chat_box__bottom_text
