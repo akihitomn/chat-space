@@ -1,6 +1,6 @@
 $(function() {
   function buildHTML(message){
-    var addImage = (message.image != null)? `<img src="${message.image}">`:``
+    var addImage = (message.image != null)? `<img src=${message.image}>`:``
     var html = `<div class="chat_box__middle_message">
       <h1>${message.name}</h1>
       <a>${message.created_at}</a>
@@ -9,6 +9,7 @@ $(function() {
       </div>`;
     return html;
   }
+
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData($(this).get(0));
@@ -32,6 +33,28 @@ $(function() {
       alert('error');
     })
     return false
-  })
+  });
+
+  $(function(){
+  setInterval(reload, 5000)
+  function reload(){
+    var current_url = document.location.pathname;
+    $.ajax({
+      type: 'GET',
+      url: current_url,
+      dataType: 'json'
+    })
+    .done(function(messages){
+      var message_size = $('.chat_box__middle_message').length;
+      if (message_size !== messages.length){
+        messages.forEach(function(message){
+        html = buildHTML(message);
+      });
+      $('.chat_box__middle').append(html);
+      $('.chat_box__middle').animate({scrollTop: $('.chat_box__middle')[0].scrollHeight}, 'fast');
+      }
+    })
+  }
+  });
 });
 
