@@ -18,7 +18,8 @@
   float:left;
   }
   i {
-  float:right;
+  float: right;
+  color: $text-white-color;
   }
 }
 }
@@ -32,11 +33,13 @@
 h1 {
   font-size: 15px;
   margin: 0 0 5px 0;
+  color: $text-white-color;
   }
 p{
   line-height: 11px;
   font-size: 11px;
   margin: 0 0 40px 0;
+  color: $text-white-color;
 }
 }
 }
